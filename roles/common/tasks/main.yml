@@ -1,0 +1,5 @@
+---
+# Tasks file for common role
+- name: Ensure baseline packages are installed (example)
+  ansible.builtin.debug:
+    msg: "Common baseline tasks configured here."
