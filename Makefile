@@ -1,10 +1,11 @@
 .DEFAULT_GOAL := help
 SHELL := /bin/bash
 VENV ?= .venv
-PYTHON ?= $(VENV)/bin/python
-ANSIBLE_PLAYBOOK ?= $(VENV)/bin/ansible-playbook
-ANSIBLE_LINT ?= $(VENV)/bin/ansible-lint
-ANSIBLE_GALAXY ?= $(VENV)/bin/ansible-galaxy
+BIN_DIR := $(shell if [ -d "$(VENV)/bin" ]; then echo "$(VENV)/bin/"; fi)
+PYTHON ?= $(BIN_DIR)python3
+ANSIBLE_PLAYBOOK ?= $(BIN_DIR)ansible-playbook
+ANSIBLE_LINT ?= $(BIN_DIR)ansible-lint
+ANSIBLE_GALAXY ?= $(BIN_DIR)ansible-galaxy
 
 .PHONY: help
 help: ## Show this help message

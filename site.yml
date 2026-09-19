@@ -8,4 +8,7 @@
 
     - name: Print host summary
       ansible.builtin.debug:
-        msg: "Connected to {{ inventory_hostname }} (OS: {{ ansible_distribution | default('N/A') }} {{ ansible_distribution_version | default('') }})"
+        msg: >-
+          Connected to {{ inventory_hostname }}
+          (OS: {{ ansible_facts['distribution'] | default('N/A') }}
+          {{ ansible_facts['distribution_version'] | default('') }})

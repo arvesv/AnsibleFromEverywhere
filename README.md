@@ -261,8 +261,9 @@ AnsibleFromEverywhere/
 ├── .devcontainer/           # VS Code Dev Container & Codespaces configuration
 │   └── devcontainer.json
 ├── .github/
-│   └── workflows/
-│       └── ci.yml          # GitHub Actions CI (linting & smoke tests)
+│   ├── workflows/
+│   │   └── ci.yml          # GitHub Actions CI (linting & smoke tests)
+│   └── dependabot.yml      # Automated dependency updates (Actions, Pip, Docker, Devcontainer)
 ├── collections/             # Downloaded Ansible collections (gitignored)
 ├── group_vars/              # Variables grouped by host categories
 │   └── all.yml

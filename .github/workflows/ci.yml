@@ -69,4 +69,3 @@ jobs:
       - name: Run hello-world playbook on localhost
         run: |
           ansible-playbook -i 'localhost,' -c local playbooks/hello-world.yml
-

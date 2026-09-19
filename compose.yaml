@@ -11,4 +11,3 @@ services:
     environment:
       - ANSIBLE_FORCE_COLOR=True
     command: ["playbooks/hello-world.yml"]
-
