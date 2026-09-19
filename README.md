@@ -208,7 +208,7 @@ Store sensitive credentials in **GitHub Repository Secrets**:
 ## Inventory & Secret Management
 
 ### Inventory Template
-The repository includes [`host.template`](file:///home/arve/GitHub/AnsibleFromEverywhere/host.template) as a starting blueprint:
+The repository includes [`inventory/hosts.yml.template`](file:///home/arve/GitHub/AnsibleFromEverywhere/inventory/hosts.yml.template) as a starting blueprint:
 
 ```yaml
 ---
@@ -230,7 +230,7 @@ all:
 
 Copy it to your active inventory file:
 ```bash
-cp host.template inventory/hosts.yml
+cp inventory/hosts.yml.template inventory/hosts.yml
 ```
 
 ### Keeping Secrets Safe with Ansible Vault
@@ -268,7 +268,8 @@ AnsibleFromEverywhere/
 ├── group_vars/              # Variables grouped by host categories
 │   └── all.yml
 ├── inventory/
-│   └── hosts.yml           # Active inventory (gitignored, created from host.template)
+│   ├── hosts.yml           # Active inventory (gitignored, created from template)
+│   └── hosts.yml.template  # Safe blueprint template for host definitions
 ├── playbooks/               # Playbooks directory
 │   ├── hello-world.yml     # Minimal smoke test playbook
 │   └── hello_world.yml     # Symlink to hello-world.yml
@@ -277,7 +278,7 @@ AnsibleFromEverywhere/
 ├── ansible.cfg              # Ansible defaults (modern callback formatting, privilege escalation)
 ├── compose.yaml             # Docker Compose runner definition
 ├── Dockerfile               # Standalone containerized runner image
-├── host.template            # Safe template for host definitions
+├── hosts.yml.template       # Symlink to inventory/hosts.yml.template
 ├── Makefile                 # Automation shortcuts (setup, lint, test, docker)
 ├── requirements.txt         # Python dependencies (ansible-core, ansible-lint)
 ├── requirements.yml         # Galaxy collections (community.general, ansible.posix)
@@ -292,7 +293,7 @@ AnsibleFromEverywhere/
 | :--- | :--- | :--- |
 | **Show help** | `make help` | — |
 | **Full setup** | `make setup` | Create venv + install pip + install galaxy |
-| **Init inventory** | `make init-inventory` | `cp host.template inventory/hosts.yml` |
+| **Init inventory** | `make init-inventory` | `cp inventory/hosts.yml.template inventory/hosts.yml` |
 | **Run linter** | `make lint` | `ansible-lint` |
 | **Syntax check** | `make syntax` | `ansible-playbook --syntax-check ...` |
 | **Smoke test** | `make hello` | `ansible-playbook playbooks/hello-world.yml` |

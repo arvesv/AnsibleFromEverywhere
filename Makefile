@@ -22,10 +22,16 @@ install: venv ## Install Python dependencies and Ansible collections
 	$(ANSIBLE_GALAXY) collection install -r requirements.yml -p collections
 
 .PHONY: init-inventory
-init-inventory: ## Create inventory/hosts.yml from host.template if missing
+init-inventory: ## Create inventory/hosts.yml from hosts.yml.template if missing
 	@if [ ! -f "inventory/hosts.yml" ]; then \
-		cp host.template inventory/hosts.yml; \
-		echo "Created inventory/hosts.yml from host.template"; \
+		if [ -f "inventory/hosts.yml.template" ]; then \
+			cp inventory/hosts.yml.template inventory/hosts.yml; \
+		elif [ -f "hosts.yml.template" ]; then \
+			cp hosts.yml.template inventory/hosts.yml; \
+		else \
+			cp host.template inventory/hosts.yml; \
+		fi; \
+		echo "Created inventory/hosts.yml from hosts.yml.template"; \
 	else \
 		echo "inventory/hosts.yml already exists"; \
 	fi
