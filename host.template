@@ -1,0 +1,27 @@
+# ==============================================================================
+# Ansible Inventory Template (host.template)
+#
+# Instructions:
+# 1. Copy this template to create your real inventory file:
+#      cp host.template inventory/hosts.yml
+#    (or cp host.template hosts.yml if running without the inventory directory)
+# 2. Update the host definitions, IP addresses, and connection variables below.
+# 3. Real inventory files (hosts, hosts.yml, inventory/hosts.yml) are ignored
+#    by Git (.gitignore) to keep private homelab credentials and IPs secure.
+# ==============================================================================
+---
+all:
+  children:
+    homelab:
+      hosts:
+        # Example server definitions:
+        # node1.homelab:
+        #   ansible_host: 192.168.1.10
+        #   ansible_user: ansible
+        # node2.homelab:
+        #   ansible_host: 192.168.1.11
+        #   ansible_user: ansible
+    local:
+      hosts:
+        localhost:
+          ansible_connection: local

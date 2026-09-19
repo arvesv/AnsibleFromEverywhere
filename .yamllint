@@ -1,0 +1,25 @@
+---
+extends: default
+
+rules:
+  braces:
+    max-spaces-inside: 1
+    level: error
+  comments:
+    min-spaces-from-content: 1
+  comments-indentation: disable
+  empty-lines:
+    max: 2
+  line-length:
+    max: 160
+    level: warning
+  octal-values:
+    forbid-implicit-octal: true
+    forbid-explicit-octal: true
+  truthy:
+    check-keys: false
+
+ignore: |
+  .ansible/
+  .venv/
+  collections/

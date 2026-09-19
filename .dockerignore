@@ -1,0 +1,15 @@
+.git
+.github
+.devcontainer
+.venv
+venv
+__pycache__
+*.pyc
+*.retry
+ansible.log
+.ansible/
+inventory/hosts.yml
+hosts
+hosts.yml
+.DS_Store
+

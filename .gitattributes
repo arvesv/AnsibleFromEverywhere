@@ -1,0 +1,29 @@
+# Auto detect text files and perform LF normalization on checkout
+* text=auto eol=lf
+
+# Explicitly ensure Unix line endings for shell scripts and configuration files
+*.sh text eol=lf
+*.bash text eol=lf
+*.py text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.ini text eol=lf
+*.cfg text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+
+# Ansible Vault files (treat as binary/do not attempt line-ending diffs/merges)
+*.vault binary
+*vault*.yml binary
+*vault*.yaml binary
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.gz binary
+*.tar binary
+*.zip binary

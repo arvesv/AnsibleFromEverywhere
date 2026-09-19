@@ -1,0 +1,14 @@
+---
+- name: Homelab Base Verification & Setup
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: Ping host
+      ansible.builtin.ping:
+
+    - name: Print host summary
+      ansible.builtin.debug:
+        msg: >-
+          Connected to {{ inventory_hostname }}
+          (OS: {{ ansible_facts['distribution'] | default('N/A') }}
+          {{ ansible_facts['distribution_version'] | default('') }})

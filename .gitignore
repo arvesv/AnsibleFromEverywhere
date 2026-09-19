@@ -1,0 +1,72 @@
+# Ansible files
+*.retry
+ansible.log
+.ansible/
+collections/ansible_collections/
+roles_downloaded/
+
+# Ansible inventory / hosts files
+hosts
+hosts.yml
+hosts.yaml
+inventory/hosts
+inventory/hosts.yml
+inventory/hosts.yaml
+!host.template
+!*.template
+!*.template.*
+
+# Ansible Vault password files
+.vault_pass*
+*.vault_pass
+*.vault_password
+*vault-key*
+vault_pass.txt
+vault-password.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+
+# IDE & Editor files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# Operating System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Test and coverage artifacts
+.pytest_cache/
+.coverage
+htmlcov/

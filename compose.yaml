@@ -1,0 +1,14 @@
+---
+services:
+  ansible:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ansible-from-everywhere:latest
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+      - ~/.ssh:/home/ansible/.ssh:ro
+    environment:
+      - ANSIBLE_FORCE_COLOR=True
+    command: ["playbooks/hello-world.yml"]

@@ -1,0 +1,4 @@
+---
+# Global variables shared across all hosts and playbooks
+ansible_python_interpreter: auto_silent
+timezone: "UTC"

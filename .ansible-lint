@@ -1,0 +1,8 @@
+---
+# .ansible-lint configuration
+profile: production
+
+exclude_paths:
+  - .ansible/
+  - .venv/
+  - collections/
