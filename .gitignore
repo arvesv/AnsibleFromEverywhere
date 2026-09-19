@@ -5,6 +5,17 @@ ansible.log
 collections/ansible_collections/
 roles_downloaded/
 
+# Ansible inventory / hosts files
+hosts
+hosts.yml
+hosts.yaml
+inventory/hosts
+inventory/hosts.yml
+inventory/hosts.yaml
+!host.template
+!*.template
+!*.template.*
+
 # Ansible Vault password files
 .vault_pass*
 *.vault_pass
