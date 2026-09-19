@@ -1,6 +1,6 @@
 {
   "name": "Ansible From Everywhere",
-  "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
+  "image": "mcr.microsoft.com/devcontainers/python:3.14-trixie",
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {
       "installZsh": "true",
